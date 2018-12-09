@@ -46,3 +46,11 @@
     left: 45%; 
     font-family: 'Source Code Pro', monospace;
 }
+
+#no {
+    color: white; 
+    position: absolute;
+    top: 72%;
+    left: 45%;
+    font-family: 'Source Code Pro', monospace;
+}
