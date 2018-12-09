@@ -12,25 +12,25 @@
 #rainbow {
     position: absolute; 
     left: 18%;
-    top: 47%; 
+    top: 49%; 
 }
 
 #sub {
     position: absolute;
     left: 33%;
-    top: 56%; 
+    top: 60%; 
 }
 
 #drop {
     position: absolute; 
     left: 60%;
-    top: 18%; 
+    top: 16%; 
 }
 
 #question {
     color: white; 
     position: absolute; 
-    top: 64%; 
+    top: 67%; 
     left: 45%;
     font-family: 'Source Code Pro', monospace;
 }
@@ -42,7 +42,7 @@
     box-shadow: black; 
     color: white;
     position: absolute; 
-    top: 69%; 
+    top: 74%; 
     left: 45%; 
     font-family: 'Source Code Pro', monospace;
 }
@@ -50,7 +50,8 @@
 #no {
     color: white; 
     position: absolute;
-    top: 72%;
+    top: 76%;
     left: 45%;
     font-family: 'Source Code Pro', monospace;
+    
 }
