@@ -39,6 +39,7 @@ $(document).ready(function(){ //when document is ready, function will be execute
                     setTimeout(typeWriter, speed);
                     }
                 }
+                typeWriter.call(); 
             }
             else if (input1.includes(["con" + h])){ 
                     var i = 0;
@@ -54,9 +55,10 @@ $(document).ready(function(){ //when document is ready, function will be execute
                         setTimeout(typeWriter, speed);
                         }
                     }
+                    typeWriter.call(); 
             }
 
-            typeWriter.call(); 
+        //    typeWriter.call(); 
             j = j + 1; 
             h = h + 1; 
         }
