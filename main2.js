@@ -200,8 +200,100 @@ var rooms = {
                figure, in possession of the blue orb, now seeps back through the reef and escapes the scene. \
                Meanwhile, a guard who was sent to alert the high officials, is strutting down the hallway in \
                 which you are hiding behind a statue and spots you.\
-                 “Hey you, thief!” he yells, “Don’t move!”"
+                 “Hey you, thief!” he yells, “Don’t move!” Where do you go?", 
+            "directions": {
+                "north": "room21", 
+                "south": "room21", 
+                "east": "room21", 
+                "west": "room21"
+            }
+        },
+    "room21": {
+        "description": "You have nowhere to run. Ahead of you are scores of guards, frantically \
+        searching for the silver orb, as if they had forgotten what had happened with the shadowy figure, \
+         and there are no corridors to the east and west. Your only options are to fight (fight now) or accept defeat (talk to) \
+         and be taken as prisoner for interrogation.", 
+         "directions": {
+             "enemy": "room22", 
+             "to": "room23"
+         }
+    },
+    "room22": {
+        "description": "You throw a sharp rock with your slingshot kick at the guard but the knight is heavily \
+        trained and stops the kick mid-air. You are thrown upon the ground and put in shackles. Other blue knights \
+         notice the scene and swarm you, preventing your escape. \
+        “What is your name, thief?” one of the blue knights ask, “You are the one who stole the silver orb, right? \
+         Where is it?!”", 
+         "directions": {
+             "to": "room24" 
+         }
+    },
+    "room23": {
+        "description": "Other blue knights notice you and swarm you, preventing your escape. \
+        “What is your name, thief?” one of the blue knights ask, “You are the one who stole the silver orb, \
+         right? Where is it?!”",
+         "directions": {
+             "to": "room24"
+         }
 
+    },
+    "room24": {
+        "description": "“Fine! If you won’t speak up, then we’ll take you to the king!” the blue knights say. \
+        You are blindfolded and forced to trust in the blue knights to take you to the king.\
+         Turning west and east, you memorize the what turns you take so that if a chance of escape should rise, \
+          you know your way out of the castle. When the blindfolded is lifted, you are kneeling in front of the  \
+          embellished and flamboyant throne of the King of the Blues. Blue tapestry hangs like fireworks from the \
+          ceiling and walls, the carpet is blue, and blue diamonds and glitter dust are strewn everywhere. The king \
+          leans forward, his veins bulging from his skin, presumably, because of his anger. \
+        “What did you do with the silver orb?” he asks.", 
+        "directions": {
+            "to": "room25"
+        }
+    }, 
+    "room25": {
+        "description":
+            "You tell him about the shadow you witnessed and as you narrate the event that you witnessed, \
+        the king’s eyes harden. He tells you that the shadow you describe is one of the rare divine beings, \
+        one of the creators of this parallel universe whose bodies are like liquid so much that they can effortlessly \
+        melt through walls and roofs. \
+        “I do not believe you,” he says, “because one of the divine shadows would never steal the orbs that \
+        he put into system in the first place.”  The king then interrogates the blue knights who were on duty \
+         when the theft happened. None of the blue knights remember a shadow and laugh at the very prospect of it. \
+        As the king interrogates his men, seeing if anyone can attest to your story, you notice that the blue in the room is fading away into grayness. \
+         The king notices this too and says to you then, “Tell me what you did with your orb or I will behead you!”", 
+    "directions": {
+        "to": "room26"
+    }
+},
+
+    "room26": {
+        "description": "The king makes you a deal. \
+        “If you want to avoid death,” he says, “then bring me back the silver orb from the shadowy \
+         creature that you describe.” \
+        Do you accept the mission?", 
+        "directions": {
+            "yes": "room27", 
+            "no": "room28", 
+        }
+    },
+    "room27": {
+        "description": "To ensure that you do not run away and forfeit, the king sends with you a blue knight \
+        named Pinto. As you and Pinto get up leave, a messenger from the Kingdom of the Yellows arrive. \
+        “The yellow orb has been stolen!” \
+        “How and when was it stolen?” you ask. \
+        “I don’t know what happened,” the yellow messenger answers. It just disappeared. \
+        From the king’s throne room, through a massive window, the glowing Interstellar river can be seen. \
+        The yellow and blue lime lights of the river are gone, leaving the river in an ominous red color. \
+        The king looks upon you in doubt but does not allow you to forfeit the mission.\
+         It seems that the faith of the Nations has been put in your hands. To be continued ...... "
+    },
+
+    "room28": {
+        "description": "You will be beheaded if you do not accept the mission!", 
+        "directions": {
+            "yes": "room27", 
+            "no": "room28"
+        }
     }
 }
 var currentRoom = "start"; 
@@ -239,7 +331,7 @@ function changeroom(dir) {
 
     }
 var inventory = ["slingshot"]; 
-var commands = ["go north", "go south", "go west", "go east", "look around", "climb up", "climb down", "hide now", "talk to", "show inventory", "show help", "use slingshot"];
+var commands = ["go north", "go south", "go west", "go east", "look around", "climb up", "climb down", "hide now", "talk to", "show inventory", "show help", "use slingshot", "fight enemy", "talk yes", "talk no"];
 function showHelp(){
     $("#game-text").append("<p>Here are your complete list of commands: </p>"); 
     $("#game-text").append("<ul>"); 
@@ -285,6 +377,9 @@ function playerInput(inputs) {
             if (inputs.split(" ")[1] == "help"){
                 showHelp(); 
             }
+        case "fight": 
+            var dir = inputs.split(" ")[1]; 
+            changeroom(dir); 
         case "talk": 
             if (inputs.split(" ")[1] == "help"){
                 showHelp(); 
