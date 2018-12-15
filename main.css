@@ -56,13 +56,16 @@
     
 }
 
-#gameback {
-    background-image: url("back.png"); 
+/* #gameback {
+    background-image: url("back1.png"); 
     background-repeat: no-repeat; 
     height: 100%;
     background-size: cover; 
-}
+} */
 
+#gameback {
+    background-color: black; 
+}
 #gtitle {
     position: relative;
     left: 25%;
@@ -74,16 +77,44 @@
     text-align: justify;
     margin-left: 230px; 
     margin-right: 230px;   
+    color: white; 
+    z-index: 100; 
 }
 
+#earthpicture {
+    color: white; 
+}
 #userinput {
     background-color: transparent; 
     outline: transparent; 
     border: 0 none; 
     border-color: transparent; 
     box-shadow: transparent; 
-    color: black;
+    color: white;
     position: relative;  
     left: 45%; 
     font-family: 'Source Code Pro', monospace;
+}
+
+#btitle {
+    position: absolute; 
+    z-index: 0; 
+}
+
+#gtitle {
+    z-index: 5; 
+}
+
+#rtitle {
+    z-index: 1; 
+    position: absolute;
+    top: 300px; 
+    right: 0px;
+}
+
+#ytitle {
+    z-index: 2; 
+    position: absolute;
+    top: 0px; 
+    right: 40px; 
 }
