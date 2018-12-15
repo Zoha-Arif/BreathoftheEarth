@@ -41,9 +41,10 @@ var rooms = {
      Dust rises around you from your fall and when you finally adjust to the scenery, \
      you hear heavy footsteps, the whispers of metal, and the faintest of breath, assumably, \
      a Kingdom guard, approaching your location. You have two options: you can hide inside a \
-     crate or confront the guard.",
+     crate or confront (talk to) the guard.",
      "directions": {
          "now": "room4", 
+         "to": "room5"
      }
     },
      "room4": {
@@ -53,9 +54,127 @@ var rooms = {
      You can hear the wood of other crates stack next to you and on top of you. Then, someone pulls all the crates away.\
       The crates placed besides you close up all tunnels that air, making the environment suffocating and difficult to \
       breathe in and the weight of the crates above you cause the lid of your crate to sink in and weaken.\
-      You can lie quietly and hope that a chance to escape the crates comes soon or you can yell for help."}
-}
+      You can hide quietly and hope that a chance to escape the crates comes soon or you can yell (talk to) for help.", 
+      "directions": {
+          "now": "room6", 
+          "to": "room7", 
+      },
 
+      "room5": {
+          "description": "You stand still as the sound of breathing and metal approach. \
+          You shield your body with a stack of two crates and wait for the guard to approach your location. \
+           You crouch down and gaze from the side of the crates and see a burly guard shackled in silver and \
+           tin armor and a jutting pointed sword. You have nothing on your persons but a slingshot and piney rocks. \
+           Do you use your slingshot to fight to guard or stay hidden?", 
+           "directions": {
+               "now": "room8", 
+               "slingshot": "room9", 
+           }
+      }
+    },
+
+    "room6": {
+      "description": "The lack of air almost suffocates you but you stay within the crate of blueberries. \
+      After about five minutes of rolling, the crates come to a stop and you hear the footsteps and metal fade. \
+      This may be your only chance to escape. Use your slingshot to escape the crate", 
+      "directions": {
+          "slingshot": "room10"
+      }, 
+    "room7": {
+        "description": "You rapidly kick against the west side of your crate, \
+        breaking the hinges and pushing the crate next to yours off the wheeled platform. \
+        The crate lands upon the glass marble floors with a thud, and as you slide your body out, \
+        you know that you need to run away from this scene before the guards return and discover you. \
+        From the scene out a small, hooked, window, it seems that you were wheeled into the castle and now stand \
+        in the Nation of the Blue’s castle’s corridors! There is a system of hallways in this corridor. Which way do you go?", 
+        "directions": {
+            "north": "room11", 
+            "south": "room12", 
+            "east": "room13", 
+            "west": "room14", 
+        }, 
+    "room8": {
+        "description": "Using your slingshot and expert archery skills, \
+        you are able to rapidly shoot three piney rocks at the guards head and face and slide \
+         in for a sweeping roundhouse kick. It seems that you are safe but you need to escape the \
+         scene before other guards come and discover their fallen soldier. The castle is north.", 
+         "directions": {
+             "north": "room15", 
+             "south": "room16", 
+             "east": "room17",     
+             "west": "room18", 
+            
+            }, 
+    "room11": {
+        "description": "There isn’t a hallway or room north of your location: only a painted wall \
+         with esteemed artwork.", 
+         "directions": {
+             "north": "room11", 
+             "south": "room12", 
+             "east": "room13", 
+             "west": "room14",
+         }
+    }, 
+
+    "room12": {
+        "description": "South of you is the massive hooked gateway of the castle. \
+         Going through that gateway will lead you out of the castle. You don’t want to go there.", 
+         "directions": {
+             "north": "room11", 
+             "south": "room12", 
+             "east": "room13", 
+             "west": "room14"
+         }
+    },
+
+     
+    "room13" : {
+        "description": "East of you is a long hallway with massive painted ceilings, \
+        gold embroidery along the wall finishings, and portraits of past Blue kings and queens. \
+        You travel down this hallway, hiding behind statues occasionally and stopping to listen for \
+        footsteps and metal. However, you are able to make it through this massive hallway without eyeing \
+        a single guard. As you come about the end of this massive hallway, however, you see that you come about \
+         a long corridor, at the end of which, is the chamber in which the Blue Kingdom cages their silver orb. \
+         This room is heavily bolted and there are blue knights swarming this hallway heavily.\
+          There is a chest north of this hallway which you can possibly climb into or you can stay \
+          put behind the statue you are currently hiding behind.",
+          "directions": {
+              "now" : "room19", 
+              "north": "room20"
+          }, 
+    "room14": {
+        "description": "You hear metal and the voices of guards emerging from the west wing hallway and \
+        don’t think that it's a particularly good idea to go that way either.", 
+        "directions": {
+            "north": "room11", 
+            "south": "room12", 
+            "east": "room13", 
+            "west": "room14"
+        }
+    }, 
+
+    "room15": {
+        "description": "You travel north, lurking behind crates and buildings, heading towards to the castle. \
+        Using a tunnel system of sewers, you sneak into the castle and emerge in a corridor. \
+        From the scene out a small, hooked, window, it seems that you were wheeled into the castle and now stand \
+        in the Nation of the Blue’s castle’s corridors! There is a system of hallways in this corridor. Which way do you go?",
+        "directions": {
+            "north": "room11", 
+            "south": "room12", 
+            "east": "room13", 
+            "west": "room14"
+        }, 
+    "room16": {
+
+    }
+    }
+    }
+    }
+        
+
+    }
+}
+}
 var currentRoom = "start"; 
 function changeroom(dir) {
     if (rooms[currentRoom].directions[dir] != undefined) {
@@ -73,9 +192,25 @@ function changeroom(dir) {
          }
          typeWriter.call(); 
     }
-}
+
+    else {
+        var i = 0;
+        var txt = "Uh oh, you can't execute that command. For a full list of commands type in 'show help'"; /* The text */
+        var speed = 30; /* The speed/duration of the effect in milliseconds */
+
+        function typeWriter() {
+          if (i < txt.length) {
+            document.getElementById("game-text").innerHTML += txt.charAt(i);
+           i++;
+           setTimeout(typeWriter, speed);
+        }
+         }
+         typeWriter.call(); 
+    }
+
+    }
 var inventory = ["slingshot"]; 
-var commands = ["go north", "go south", "go west", "go east", "look around", "climb up", "climb down", "hide now", "talk to", "show inventory", "show help"];
+var commands = ["go north", "go south", "go west", "go east", "look around", "climb up", "climb down", "hide now", "talk to", "show inventory", "show help", "use slingshot"];
 function showHelp(){
     $("#game-text").append("<p>Here are your complete list of commands: </p>"); 
     $("#game-text").append("<ul>"); 
@@ -111,11 +246,13 @@ function playerInput(inputs) {
             var dir = inputs.split(" ")[1]; 
             changeroom(dir); 
             break; 
+        case "use": 
+             var dir = inputs.split(" ")[1]; 
+             changeroom(dir); 
         case "show": 
             if (inputs.split(" ")[1] == "help"){
                 showHelp(); 
             }
-
             else if (inputs.split(" ")[1] == "inventory") {
                 showInventory(); 
             }
