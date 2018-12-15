@@ -79,7 +79,8 @@ var rooms = {
       This may be your only chance to escape. Use your slingshot to escape the crate", 
       "directions": {
           "slingshot": "room10"
-      }, 
+      }
+    },
     "room7": {
         "description": "You rapidly kick against the west side of your crate, \
         breaking the hinges and pushing the crate next to yours off the wheeled platform. \
@@ -92,7 +93,8 @@ var rooms = {
             "south": "room12", 
             "east": "room13", 
             "west": "room14", 
-        }, 
+        }
+    },
     "room8": {
         "description": "Using your slingshot and expert archery skills, \
         you are able to rapidly shoot three piney rocks at the guards head and face and slide \
@@ -100,11 +102,9 @@ var rooms = {
          scene before other guards come and discover their fallen soldier. The castle is north.", 
          "directions": {
              "north": "room15", 
-             "south": "room16", 
-             "east": "room17",     
-             "west": "room18", 
             
-            }, 
+            }
+        },
     "room11": {
         "description": "There isn’t a hallway or room north of your location: only a painted wall \
          with esteemed artwork.", 
@@ -141,7 +141,8 @@ var rooms = {
           "directions": {
               "now" : "room19", 
               "north": "room20"
-          }, 
+          }
+        },
     "room14": {
         "description": "You hear metal and the voices of guards emerging from the west wing hallway and \
         don’t think that it's a particularly good idea to go that way either.", 
@@ -163,17 +164,45 @@ var rooms = {
             "south": "room12", 
             "east": "room13", 
             "west": "room14"
-        }, 
-    "room16": {
+        }
+    },
+    "room19": {
+        "description": "As you stay relatively hidden behind the statue, a peculiar scene unfolds: from the embellished, \
+        painted, roof, a dense, concentrated, haze of smoke seeps through. The blue knights immediately notice the \
+        concentrated smoke and scramble to alert the king and other high officials. However, as the smoke approaches \
+         the marble floors of the corridor, it slowly concentrates into the vague shape of a human, so that the smoke \
+          now appears to be a shadow without a body. The blue knights raise their swords and yell, “Halt! Do not come near!” \
+           and the shadowy figure does not come near. Instead, a voice like melted silver and copper, profound and cold, \
+           says, “You will open the gates for me and hand me the silver orb.” And, to your utter surprise, the gates \
+           that barricade the blue’s silver orbs are opened by the blue knights, and one of the blue knights, \
+           the chief commander, unravels the Blue’s silver orb to the shadowy figure! The shadowy figure, in \
+            possession of the blue orb, now seeps back through the reef and escapes the scene. Meanwhile, a \
+            guard who was sent to alert the \
+        high officials, is strutting down the hallway in which you are hiding behind a statue and spots you. In which direction do you run?",
+        "directions": {
+            "north": "room21", 
+            "south": "room21", 
+            "east": "room21", 
+            "west": "room21"
+        }
+    },
+    "room20": {
+        "description": "You head north and hide inside the chest for ood cover. You hold the lid open a bit and watch a rather peculiar scene unfolds: \
+         from the embellished, painted, roof, a dense, concentrated, haze of smoke seeps through. \
+         The blue knights immediately notice the concentrated smoke and scramble to alert the king and \
+          other high officials. However, as the smoke approaches the marble floors of the corridor, it \
+           slowly concentrates into the vague shape of a human, so that the smoke now appears to be a shadow \
+           without a body. The blue knights raise their swords and yell, “Halt! Do not come near!” and the shadowy \
+            figure does not come near. Instead, a voice like melted silver and copper, profound and cold, says,\
+             “You will open the gates for me and hand me the silver orb.” And, to your utter surprise, the \
+             gates that barricade the blue’s silver orbs are opened by the blue knights, and one of the blue \
+              knights, the chief commander, unravels the Blue’s silver orb to the shadowy figure! The shadowy \
+               figure, in possession of the blue orb, now seeps back through the reef and escapes the scene. \
+               Meanwhile, a guard who was sent to alert the high officials, is strutting down the hallway in \
+                which you are hiding behind a statue and spots you.\
+                 “Hey you, thief!” he yells, “Don’t move!”"
 
     }
-    }
-    }
-    }
-        
-
-    }
-}
 }
 var currentRoom = "start"; 
 function changeroom(dir) {
