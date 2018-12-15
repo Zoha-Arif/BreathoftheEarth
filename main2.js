@@ -249,7 +249,14 @@ function playerInput(inputs) {
         case "use": 
              var dir = inputs.split(" ")[1]; 
              changeroom(dir); 
+        case "hide": 
+             var dir = inputs.split(" ")[1]; 
+             changeroom(dir); 
         case "show": 
+            if (inputs.split(" ")[1] == "help"){
+                showHelp(); 
+            }
+        case "talk": 
             if (inputs.split(" ")[1] == "help"){
                 showHelp(); 
             }
