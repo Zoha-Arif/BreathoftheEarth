@@ -44,7 +44,7 @@ var rooms = {
      crate or confront (talk to) the guard.",
      "directions": {
          "now": "room4", 
-         "to": "room5"
+         "to": "room5",
      }
     },
      "room4": {
@@ -424,10 +424,6 @@ $(document).ready(function(){ //when document is ready, function will be execute
         if (key.which == 13){
             var input1 = $('#userinput').val().toLowerCase();
             playerInput(input1); 
-
-
-               
             }
-          
     })
     })
