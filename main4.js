@@ -20,7 +20,7 @@ var rooms = {
      you hear heavy footsteps, the whispers of metal, and the faintest of breath, assumably, \
      a Kingdom guard, approaching your location. You have two options: you can hide inside a \
      crate or confront the guard.",
-     "room4": "You open a massive crate of blueberries and are able to fit your entire body and the lid safely back on.\ 
+     "room4": "You open a massive crate of blueberries and are able to fit your entire body and the lid safely back on. \
      As you lay silently, you hear the sound of the foot steps approach your crate. \
      Suddenly, you feel that the crate you are in is lifted briefly and placed down roughly  upon another platform. \
      You can hear the wood of other crates stack next to you and on top of you. Then, someone pulls all the crates away.\
@@ -37,7 +37,7 @@ $(document).ready(function(){ //when document is ready, function will be execute
     var w = 0; 
     var v = 4; 
     $(document).keypress(function(key){
-        var input1 = $('#userinput').val();
+        var input1 = $('#userinput').val().lowercase();
         if (key.which == 13){
             if (input1.includes(rooms["con" + j])){ 
                 var i = 0;
