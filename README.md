@@ -1,11 +1,5 @@
 # 🌍 Breath of the Earth
 
-A text-based adventure game that immerses you in an environmental storytelling experience—navigate the world, uncover secrets, and explore how our actions affect the planet.
-
----
-
-## 🎯 Game Concept
-
 "Breath of the Earth" is a narrative-driven command-line style adventure inspired by environmental themes. Players embark on a journey, encounter challenges, and make decisions that shape the world around them.
 
 ---
@@ -27,10 +21,3 @@ A text-based adventure game that immerses you in an environmental storytelling e
 - **Console output formatting** for styled text and ASCII visuals
 
 ---
-
-## 🚀 How to Play
-
-```bash
-git clone https://github.com/Zoha-Arif/BreathoftheEarth.git
-cd BreathoftheEarth
-node app.js
